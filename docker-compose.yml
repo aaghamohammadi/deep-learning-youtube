@@ -1,6 +1,6 @@
 services:
   jupyter:
-    image: tensorflow/tensorflow:latest-gpu-jupyter
+    image: tensorflow/tensorflow:2.15.0-gpu-jupyter
     container_name: jupyter_gpu
     ports:
       - "8888:8888"
@@ -15,3 +15,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
     runtime: nvidia
+    dns:
+      - 178.22.122.100
+      - 185.51.200.2
